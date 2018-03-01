@@ -36,6 +36,7 @@ import com.google.ar.core.Frame;
 import com.google.ar.core.Pose;
 import com.google.ar.core.Session;
 import com.google.ar.core.Trackable;
+import com.google.ar.core.TrackingState;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
@@ -318,7 +319,7 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
             mBackgroundRenderer.draw(frame);
 
             // If not tracking, don't draw 3d objects.
-            if (camera.getTrackingState() == Trackable.TrackingState.PAUSED) {
+            if (camera.getTrackingState() == TrackingState.PAUSED) {
                 return;
             }
 
